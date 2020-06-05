@@ -1,0 +1,2224 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<Group>AlwaysHorizontal</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="GroupSources" id="88">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group sources</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group sources</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="GroupSourcesExtendedTooltip" id="89"/>
+			<Events>
+				<Event name="OnCurrentPageChange">GroupSourcesOnCurrentPageChange</Event>
+			</Events>
+			<ChildItems>
+				<Page name="GroupLocalDir" id="90">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Локально</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Локальный каталог</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupLocalDirExtendedTooltip" id="91"/>
+					<ChildItems>
+						<Table name="LocalSchemes" id="94">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>25</Width>
+							<Header>false</Header>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<HorizontalStretch>false</HorizontalStretch>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>LocalSchemes</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="LocalSchemesContextMenu" id="95"/>
+							<AutoCommandBar name="LocalSchemesCommandBar" id="96">
+								<ChildItems>
+									<Button name="LocalSchemesRereadLocalDir" id="151">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.RereadLocalDir</CommandName>
+										<ExtendedTooltip name="LocalSchemesRereadLocalDirExtendedTooltip" id="152"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="LocalSchemesExtendedTooltip" id="97"/>
+							<SearchStringAddition name="LocalSchemesSearchString" id="98">
+								<AdditionSource>
+									<Item>LocalSchemes</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="LocalSchemesSearchStringContextMenu" id="99"/>
+								<ExtendedTooltip name="LocalSchemesSearchStringExtendedTooltip" id="100"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="LocalSchemesViewStatus" id="101">
+								<AdditionSource>
+									<Item>LocalSchemes</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="LocalSchemesViewStatusContextMenu" id="102"/>
+								<ExtendedTooltip name="LocalSchemesViewStatusExtendedTooltip" id="103"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="LocalSchemesSearchControl" id="104">
+								<AdditionSource>
+									<Item>LocalSchemes</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="LocalSchemesSearchControlContextMenu" id="105"/>
+								<ExtendedTooltip name="LocalSchemesSearchControlExtendedTooltip" id="106"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">LocalSchemesOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="LocalSchemesName" id="107">
+									<DataPath>LocalSchemes.Name</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="LocalSchemesNameContextMenu" id="108"/>
+									<ExtendedTooltip name="LocalSchemesNameExtendedTooltip" id="109"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="GroupIDEA" id="113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>IDEA</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Онлайн галерея IDEA</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupIDEAExtendedTooltip" id="114"/>
+					<ChildItems>
+						<UsualGroup name="GroupIDEAButtons" id="140">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group IDEAButtons</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group IDEAButtons</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupIDEAButtonsExtendedTooltip" id="141"/>
+							<ChildItems>
+								<Button name="ColorThemesSortByTitle" id="142">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ColorThemesSortByTitle</CommandName>
+									<ExtendedTooltip name="ColorThemesSortByTitleExtendedTooltip" id="143"/>
+								</Button>
+								<Button name="ColorThemesSortByColor" id="144">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ColorThemesSortByColor</CommandName>
+									<ExtendedTooltip name="ColorThemesSortByColorExtendedTooltip" id="145"/>
+								</Button>
+								<Button name="ColorThemesSortByDownloads" id="146">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ColorThemesSortByDownloads</CommandName>
+									<ExtendedTooltip name="ColorThemesSortByDownloadsExtendedTooltip" id="147"/>
+								</Button>
+								<LabelDecoration name="Decoration1" id="148">
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="Decoration1ContextMenu" id="149"/>
+									<ExtendedTooltip name="Decoration1ExtendedTooltip" id="150"/>
+								</LabelDecoration>
+								<InputField name="ColorThemesCount" id="131">
+									<DataPath>ColorThemesCount</DataPath>
+									<MinValue xsi:type="xs:decimal">1</MinValue>
+									<ContextMenu name="ColorThemesCountContextMenu" id="132"/>
+									<ExtendedTooltip name="ColorThemesCountExtendedTooltip" id="133"/>
+									<Events>
+										<Event name="OnChange">ColorThemesCountOnChange</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ColorThemes" id="115">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>25</Width>
+							<Header>false</Header>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<HorizontalStretch>false</HorizontalStretch>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ColorThemes</DataPath>
+							<BackColor>web:Gainsboro</BackColor>
+							<SearchStringLocation>Top</SearchStringLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ColorThemesContextMenu" id="116"/>
+							<AutoCommandBar name="ColorThemesCommandBar" id="117">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ColorThemesExtendedTooltip" id="118"/>
+							<SearchStringAddition name="ColorThemesSearchString" id="119">
+								<AdditionSource>
+									<Item>ColorThemes</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ColorThemesSearchStringContextMenu" id="120"/>
+								<ExtendedTooltip name="ColorThemesSearchStringExtendedTooltip" id="121"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ColorThemesViewStatus" id="122">
+								<AdditionSource>
+									<Item>ColorThemes</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ColorThemesViewStatusContextMenu" id="123"/>
+								<ExtendedTooltip name="ColorThemesViewStatusExtendedTooltip" id="124"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ColorThemesSearchControl" id="125">
+								<AdditionSource>
+									<Item>ColorThemes</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ColorThemesSearchControlContextMenu" id="126"/>
+								<ExtendedTooltip name="ColorThemesSearchControlExtendedTooltip" id="127"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ColorThemesOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ColorThemesTitle" id="128">
+									<DataPath>ColorThemes.Title</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ColorThemesTitleContextMenu" id="129"/>
+									<ExtendedTooltip name="ColorThemesTitleExtendedTooltip" id="130"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelDecoration name="ColorThemesLink" id="153">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>http://color-themes.com</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="ColorThemesLinkContextMenu" id="154"/>
+							<ExtendedTooltip name="ColorThemesLinkExtendedTooltip" id="155"/>
+							<Events>
+								<Event name="Click">LinkClick</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="GroupSublime" id="92">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Sublime</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Онлайн галерея Sublime</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupSublimeExtendedTooltip" id="93"/>
+					<ChildItems>
+						<UsualGroup name="GroupSublimeButtons" id="134">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group sublime buttons</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group sublime buttons</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupSublimeButtonsExtendedTooltip" id="135"/>
+							<ChildItems>
+								<Button name="tmThemeGallerySortByName" id="136">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.tmThemeGallerySortByName</CommandName>
+									<ExtendedTooltip name="tmThemeGallerySortByNameExtendedTooltip" id="137"/>
+								</Button>
+								<Button name="tmThemeGallerySortByColor" id="138">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.tmThemeGallerySortByColor</CommandName>
+									<ExtendedTooltip name="tmThemeGallerySortByColorExtendedTooltip" id="139"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="tmThemeGallery" id="68">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Width>25</Width>
+							<Header>false</Header>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<HorizontalStretch>false</HorizontalStretch>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>tmThemeGallery</DataPath>
+							<BackColor>web:Gainsboro</BackColor>
+							<SearchStringLocation>Top</SearchStringLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="tmThemeGalleryContextMenu" id="69"/>
+							<AutoCommandBar name="tmThemeGalleryCommandBar" id="70">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="tmThemeGalleryExtendedTooltip" id="71"/>
+							<SearchStringAddition name="tmThemeGallerySearchString" id="72">
+								<AdditionSource>
+									<Item>tmThemeGallery</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="tmThemeGallerySearchStringContextMenu" id="73"/>
+								<ExtendedTooltip name="tmThemeGallerySearchStringExtendedTooltip" id="74"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="tmThemeGalleryViewStatus" id="75">
+								<AdditionSource>
+									<Item>tmThemeGallery</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="tmThemeGalleryViewStatusContextMenu" id="76"/>
+								<ExtendedTooltip name="tmThemeGalleryViewStatusExtendedTooltip" id="77"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="tmThemeGallerySearchControl" id="78">
+								<AdditionSource>
+									<Item>tmThemeGallery</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="tmThemeGallerySearchControlContextMenu" id="79"/>
+								<ExtendedTooltip name="tmThemeGallerySearchControlExtendedTooltip" id="80"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">tmThemeGalleryOnActivateRow</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="tmThemeGalleryName" id="81">
+									<DataPath>tmThemeGallery.Name</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="tmThemeGalleryNameContextMenu" id="82"/>
+									<ExtendedTooltip name="tmThemeGalleryNameExtendedTooltip" id="83"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<LabelDecoration name="tmThemeLink" id="156">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>https://tmtheme-editor.herokuapp.com</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<ContextMenu name="tmThemeLinkContextMenu" id="157"/>
+							<ExtendedTooltip name="tmThemeLinkExtendedTooltip" id="158"/>
+							<Events>
+								<Event name="Click">LinkClick</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<UsualGroup name="GroupRight" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group right</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group right</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupRightExtendedTooltip" id="67"/>
+			<ChildItems>
+				<InputField name="ColorSchemesDirPath" id="110">
+					<DataPath>ColorSchemesDirPath</DataPath>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ChoiceButton>true</ChoiceButton>
+					<ContextMenu name="ColorSchemesDirPathContextMenu" id="111"/>
+					<ExtendedTooltip name="ColorSchemesDirPathExtendedTooltip" id="112"/>
+					<Events>
+						<Event name="OnChange">ColorSchemesDirPathOnChange</Event>
+						<Event name="StartChoice">ColorSchemesDirPathStartChoice</Event>
+					</Events>
+				</InputField>
+				<Pages name="GroupIDEs" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group IDEs</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Group IDEs</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="GroupIDEsExtendedTooltip" id="8"/>
+					<ChildItems>
+						<Page name="GroupDesigner" id="9">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Конфигуратор</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Group designer</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="GroupDesignerExtendedTooltip" id="10"/>
+							<ChildItems>
+								<UsualGroup name="GroupDes_Columns" id="14">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group des columns</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group des columns</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDes_ColumnsExtendedTooltip" id="15"/>
+									<ChildItems>
+										<HTMLDocumentField name="Des_HTML" id="63">
+											<DataPath>Des_HTML</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="Des_HTMLContextMenu" id="64"/>
+											<ExtendedTooltip name="Des_HTMLExtendedTooltip" id="65"/>
+											<Events>
+												<Event name="OnClick">HTMLOnClick</Event>
+											</Events>
+										</HTMLDocumentField>
+										<UsualGroup name="GroupDes_Colors" id="16">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group des colors</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Group des colors</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupDes_ColorsExtendedTooltip" id="17"/>
+											<ChildItems>
+												<InputField name="Des_Keywords" id="18">
+													<DataPath>Des_Keywords</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_KeywordsContextMenu" id="19"/>
+													<ExtendedTooltip name="Des_KeywordsExtendedTooltip" id="20"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Numerics" id="21">
+													<DataPath>Des_Numerics</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_NumericsContextMenu" id="22"/>
+													<ExtendedTooltip name="Des_NumericsExtendedTooltip" id="23"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Strings" id="24">
+													<DataPath>Des_Strings</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_StringsContextMenu" id="25"/>
+													<ExtendedTooltip name="Des_StringsExtendedTooltip" id="26"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Dates" id="27">
+													<DataPath>Des_Dates</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_DatesContextMenu" id="28"/>
+													<ExtendedTooltip name="Des_DatesExtendedTooltip" id="29"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Identifiers" id="30">
+													<DataPath>Des_Identifiers</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_IdentifiersContextMenu" id="31"/>
+													<ExtendedTooltip name="Des_IdentifiersExtendedTooltip" id="32"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Operators" id="33">
+													<DataPath>Des_Operators</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_OperatorsContextMenu" id="34"/>
+													<ExtendedTooltip name="Des_OperatorsExtendedTooltip" id="35"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Comments" id="36">
+													<DataPath>Des_Comments</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_CommentsContextMenu" id="37"/>
+													<ExtendedTooltip name="Des_CommentsExtendedTooltip" id="38"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Preprocessor" id="39">
+													<DataPath>Des_Preprocessor</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_PreprocessorContextMenu" id="40"/>
+													<ExtendedTooltip name="Des_PreprocessorExtendedTooltip" id="41"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_CurrentToken" id="42">
+													<DataPath>Des_CurrentToken</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_CurrentTokenContextMenu" id="43"/>
+													<ExtendedTooltip name="Des_CurrentTokenExtendedTooltip" id="44"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_CurrentSelection" id="45">
+													<DataPath>Des_CurrentSelection</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_CurrentSelectionContextMenu" id="46"/>
+													<ExtendedTooltip name="Des_CurrentSelectionExtendedTooltip" id="47"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_PairLexeme" id="48">
+													<DataPath>Des_PairLexeme</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_PairLexemeContextMenu" id="49"/>
+													<ExtendedTooltip name="Des_PairLexemeExtendedTooltip" id="50"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Others" id="51">
+													<DataPath>Des_Others</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_OthersContextMenu" id="52"/>
+													<ExtendedTooltip name="Des_OthersExtendedTooltip" id="53"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_Background" id="60">
+													<DataPath>Des_Background</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_BackgroundContextMenu" id="61"/>
+													<ExtendedTooltip name="Des_BackgroundExtendedTooltip" id="62"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_SearchResult" id="54">
+													<DataPath>Des_SearchResult</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_SearchResultContextMenu" id="55"/>
+													<ExtendedTooltip name="Des_SearchResultExtendedTooltip" id="56"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<InputField name="Des_AutoAssistBackground" id="57">
+													<DataPath>Des_AutoAssistBackground</DataPath>
+													<Width>10</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="Des_AutoAssistBackgroundContextMenu" id="58"/>
+													<ExtendedTooltip name="Des_AutoAssistBackgroundExtendedTooltip" id="59"/>
+													<Events>
+														<Event name="OnChange">ColorOnChange</Event>
+														<Event name="StartChoice">ColorStartChoice</Event>
+													</Events>
+												</InputField>
+												<Button name="InvertDesigner" id="161">
+													<Type>UsualButton</Type>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<CommandName>Form.Command.InvertColors</CommandName>
+													<ExtendedTooltip name="InvertDesignerРасширеннаяПодсказка" id="162"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupDes_Buttons" id="163">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group des buttons</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Group des buttons</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupDes_ButtonsExtendedTooltip" id="164"/>
+									<ChildItems>
+										<Button name="InstallToDesigner" id="159">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.InstallToDesigner</CommandName>
+											<BackColor>web:Gold</BackColor>
+											<Font ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+											<ExtendedTooltip name="InstallToDesignerExtendedTooltip" id="160"/>
+										</Button>
+										<Button name="Des_SaveToFile" id="165">
+											<Type>UsualButton</Type>
+											<Width>25</Width>
+											<CommandName>Form.Command.SaveToFile</CommandName>
+											<Font ref="style:NormalTextFont" height="16" kind="StyleItem"/>
+											<ExtendedTooltip name="Des_SaveToFileExtendedTooltip" id="166"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+						<Page name="GroupEDT" id="167">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>EDT</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="GroupEDTExtendedTooltip" id="168"/>
+							<ChildItems>
+								<UsualGroup name="GroupEDT_Columns" id="169">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupEDT_ColumnsExtendedTooltip" id="170"/>
+									<ChildItems>
+										<HTMLDocumentField name="EDT_HTML" id="171">
+											<DataPath>EDT_HTML</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="EDT_HTMLContextMenu" id="172"/>
+											<ExtendedTooltip name="EDT_HTMLExtendedTooltip" id="173"/>
+											<Events>
+												<Event name="OnClick">HTMLOnClick</Event>
+											</Events>
+										</HTMLDocumentField>
+										<UsualGroup name="GroupEDT_Right" id="243">
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="GroupEDT_RightExtendedTooltip" id="244"/>
+											<ChildItems>
+												<Pages name="GroupEDT_Colors" id="174">
+													<ExtendedTooltip name="GroupEDT_ColorsExtendedTooltip" id="175"/>
+													<ChildItems>
+														<Page name="GroupEDT_Syntax" id="176">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Синтаксис</v8:content>
+																</v8:item>
+															</Title>
+															<ExtendedTooltip name="GroupEDT_SyntaxExtendedTooltip" id="177"/>
+															<ChildItems>
+																<InputField name="EDT_Builtinfunction" id="180">
+																	<DataPath>EDT_Builtinfunction</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_BuiltinfunctionContextMenu" id="181"/>
+																	<ExtendedTooltip name="EDT_BuiltinfunctionExtendedTooltip" id="182"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_BSL_Pragmas" id="183">
+																	<DataPath>EDT_BSL_Pragmas</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_BSL_PragmasContextMenu" id="184"/>
+																	<ExtendedTooltip name="EDT_BSL_PragmasExtendedTooltip" id="185"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_BSL_Keywords" id="186">
+																	<DataPath>EDT_BSL_Keywords</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_BSL_KeywordsContextMenu" id="187"/>
+																	<ExtendedTooltip name="EDT_BSL_KeywordsExtendedTooltip" id="188"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Comment" id="189">
+																	<DataPath>EDT_Comment</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_CommentContextMenu" id="190"/>
+																	<ExtendedTooltip name="EDT_CommentExtendedTooltip" id="191"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Label" id="192">
+																	<DataPath>EDT_Label</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_LabelContextMenu" id="193"/>
+																	<ExtendedTooltip name="EDT_LabelExtendedTooltip" id="194"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Operators" id="195">
+																	<DataPath>EDT_Operators</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_OperatorsContextMenu" id="196"/>
+																	<ExtendedTooltip name="EDT_OperatorsExtendedTooltip" id="197"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Others" id="198">
+																	<DataPath>EDT_Others</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_OthersContextMenu" id="199"/>
+																	<ExtendedTooltip name="EDT_OthersExtendedTooltip" id="200"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Preprocessor" id="201">
+																	<DataPath>EDT_Preprocessor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_PreprocessorContextMenu" id="202"/>
+																	<ExtendedTooltip name="EDT_PreprocessorExtendedTooltip" id="203"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Brackets" id="204">
+																	<DataPath>EDT_Brackets</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_BracketsContextMenu" id="205"/>
+																	<ExtendedTooltip name="EDT_BracketsExtendedTooltip" id="206"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Strings" id="207">
+																	<DataPath>EDT_Strings</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_StringsContextMenu" id="208"/>
+																	<ExtendedTooltip name="EDT_StringsExtendedTooltip" id="209"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Numbers" id="210">
+																	<DataPath>EDT_Numbers</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_NumbersContextMenu" id="211"/>
+																	<ExtendedTooltip name="EDT_NumbersExtendedTooltip" id="212"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+															</ChildItems>
+														</Page>
+														<Page name="GroupEDT_Editor" id="178">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Редактор</v8:content>
+																</v8:item>
+															</Title>
+															<Group>HorizontalIfPossible</Group>
+															<ExtendedTooltip name="GroupEDT_EditorExtendedTooltip" id="179"/>
+															<ChildItems>
+																<InputField name="EDT_occurrenceIndicationColor" id="240">
+																	<DataPath>EDT_occurrenceIndicationColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_occurrenceIndicationColorContextMenu" id="241"/>
+																	<ExtendedTooltip name="EDT_occurrenceIndicationColorExtendedTooltip" id="242"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_currentIPColor" id="256">
+																	<DataPath>EDT_currentIPColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_currentIPColorContextMenu" id="257"/>
+																	<ExtendedTooltip name="EDT_currentIPColorExtendedTooltip" id="258"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_lineNumberColor" id="213">
+																	<DataPath>EDT_lineNumberColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_lineNumberColorContextMenu" id="214"/>
+																	<ExtendedTooltip name="EDT_lineNumberColorExtendedTooltip" id="215"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_currentLineColor" id="216">
+																	<DataPath>EDT_currentLineColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_currentLineColorContextMenu" id="217"/>
+																	<ExtendedTooltip name="EDT_currentLineColorExtendedTooltip" id="218"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_printMarginColor" id="219">
+																	<DataPath>EDT_printMarginColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_printMarginColorContextMenu" id="220"/>
+																	<ExtendedTooltip name="EDT_printMarginColorExtendedTooltip" id="221"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_FindScope" id="222">
+																	<DataPath>EDT_FindScope</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_FindScopeContextMenu" id="223"/>
+																	<ExtendedTooltip name="EDT_FindScopeExtendedTooltip" id="224"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_SelectionForeground" id="225">
+																	<DataPath>EDT_SelectionForeground</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_SelectionForegroundContextMenu" id="226"/>
+																	<ExtendedTooltip name="EDT_SelectionForegroundExtendedTooltip" id="227"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_SelectionBackground" id="228">
+																	<DataPath>EDT_SelectionBackground</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_SelectionBackgroundContextMenu" id="229"/>
+																	<ExtendedTooltip name="EDT_SelectionBackgroundExtendedTooltip" id="230"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Background" id="231">
+																	<DataPath>EDT_Background</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_BackgroundContextMenu" id="232"/>
+																	<ExtendedTooltip name="EDT_BackgroundExtendedTooltip" id="233"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_Foreground" id="234">
+																	<DataPath>EDT_Foreground</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_ForegroundContextMenu" id="235"/>
+																	<ExtendedTooltip name="EDT_ForegroundExtendedTooltip" id="236"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+																<InputField name="EDT_hyperlinkColor" id="237">
+																	<DataPath>EDT_hyperlinkColor</DataPath>
+																	<Width>10</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="EDT_hyperlinkColorContextMenu" id="238"/>
+																	<ExtendedTooltip name="EDT_hyperlinkColorExtendedTooltip" id="239"/>
+																	<Events>
+																		<Event name="OnChange">ColorOnChange</Event>
+																	</Events>
+																</InputField>
+															</ChildItems>
+														</Page>
+													</ChildItems>
+												</Pages>
+												<Button name="InvertEDT" id="245">
+													<Type>UsualButton</Type>
+													<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+													<CommandName>Form.Command.InvertColors</CommandName>
+													<ExtendedTooltip name="InvertEDTExtendedTooltip" id="246"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<InputField name="EDT_WorkspacePath" id="247">
+									<DataPath>EDT_WorkspacePath</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="EDT_WorkspacePathContextMenu" id="248"/>
+									<ExtendedTooltip name="EDT_WorkspacePathExtendedTooltip" id="249"/>
+									<Events>
+										<Event name="StartChoice">EDT_WorkspacePathStartChoice</Event>
+									</Events>
+								</InputField>
+								<UsualGroup name="GroupEDT_Buttons" id="250">
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupEDT_ButtonsExtendedTooltip" id="251"/>
+									<ChildItems>
+										<Button name="InstallToEDT" id="254">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.InstallToEDT</CommandName>
+											<BackColor>web:Gold</BackColor>
+											<Font faceName="" height="16" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+											<ExtendedTooltip name="InstallToEDTExtendedTooltip" id="255"/>
+										</Button>
+										<Button name="EDT_SaveToFile" id="252">
+											<Type>UsualButton</Type>
+											<Width>25</Width>
+											<CommandName>Form.Command.SaveToFile</CommandName>
+											<Font faceName="" height="16" bold="false" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+											<ExtendedTooltip name="EDT_SaveToFileExtendedTooltip" id="253"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Object</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ColorSchemesInstaller</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Des_Keywords" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключевые слова</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Numerics" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Константы типа "Число"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Others" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочее</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Background" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фон</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_CurrentToken" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий идентификатор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_CurrentSelection" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбранный идентификатор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_PairLexeme" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Границы блока</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_SearchResult" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результаты поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_AutoAssistBackground" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контекстная подсказка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Strings" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Константы типа "Строка"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Dates" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Константы типа "Дата"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Identifiers" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификаторы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Operators" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операторы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Comments" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_Preprocessor" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Препроцессор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_ColorsTable" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Des colors table</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Name1C" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name1 C</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameIDEA" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name IDEA</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="DefaultColor" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Default color</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameSublime" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name sublime</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameSublimes" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name sublimes</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Des_Template" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Des template</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Des_HTML" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Des HTML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="tmThemeGallery" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Галерея тем</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Light" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Light</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Name" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="URL" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>URL</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="LocalSchemes" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Local schemes</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Name" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="FullName" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Full name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ColorSchemesDirPath" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь каталога с цветовыми схемами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ColorSchemesDirPath</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ColorThemes" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Color themes</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="_id" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Id</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Title" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Title</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Downloads" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Downloads</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Light" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Light</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ColorThemesCount" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>TOP</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>ColorThemesCount</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="BackgroundColors" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Background colors</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<Settings xsi:type="v8:TypeDescription">
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Settings>
+		</Attribute>
+		<Attribute name="EDT_HTML" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT HTML</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_BSL_Keywords" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключевое слово</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Numbers" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Число</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_BSL_Pragmas" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Директивы компиляции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Builtinfunction" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Встроенные функции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_FindScope" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Область поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Background" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет фона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Preprocessor" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Препроцессор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Comment" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Operators" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операторы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Strings" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_lineNumberColor" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет номера строки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Brackets" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скобки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Others" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Label" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Метка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_currentLineColor" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая строка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_printMarginColor" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печатное поле</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_SelectionForeground" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет текста выделения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_SelectionBackground" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет фона выделения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Foreground" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Метка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_hyperlinkColor" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Гиперссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_Template" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT template</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_ColorsTable" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT colors table</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Name1C" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name1 C</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameIDEA" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name IDEA</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="DefaultColor" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Default color</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameSublime" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name sublime</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="NameSublimes" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Name sublimes</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="FullName1C" id="54">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Full name1 C</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="EDT_occurrenceIndicationColor" id="55">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вхождения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_WorkspacePath" id="56">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочая область</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>EDT_WorkspacePath</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="EDT_EditorPrefsFilePath" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT editor prefs file path</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_SyntaxPrefsFilePath" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT syntax prefs file path</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_TokenStylesPrefix" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>EDT token styles prefix</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="EDT_currentIPColor" id="62">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отладка указателя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>tmThemeGallery</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">tmThemeGallery.Light</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DimGray</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:White</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ColorThemes</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ColorThemes.Light</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>BackColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">web:DimGray</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">style:FieldBackColor</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>LocalSchemes</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">LocalSchemes.Name</dcsset:left>
+						<dcsset:comparisonType>Like</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:string">%.csi</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Font</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Font" ref="sys:DefaultGUIFont" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="tmThemeGallerySortByName" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по имени</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по имени</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SortListAsc</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>tmThemeGallerySortByName</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="tmThemeGallerySortByColor" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по цвету</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по цвету</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceBoxesTwoFilled</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>tmThemeGallerySortByColor</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ColorThemesSortByColor" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по цвету</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по цвету</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AppearanceBoxesTwoFilled</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ColorThemesSortByColor</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ColorThemesSortByTitle" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по имени</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по имени</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.SortListAsc</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ColorThemesSortByTitle</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ColorThemesSortByDownloads" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по загрузкам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по загрузкам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.AddToFavorites</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ColorThemesSortByDownloads</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="RereadLocalDir" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>RereadLocalDir</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="InstallToDesigner" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать в файл настроек конфигуратора</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать в файл настроек конфигуратора</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>InstallToDesigner</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="InvertColors" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвертировать цвета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвертировать цвета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+I</Shortcut>
+			<Action>InvertColors</Action>
+		</Command>
+		<Command name="SaveToFile" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в файл</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в файл</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>SaveToFile</Action>
+		</Command>
+		<Command name="InstallToEDT" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать в файлы настроек EDT</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать в файлы настроек EDT</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>InstallToEDT</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

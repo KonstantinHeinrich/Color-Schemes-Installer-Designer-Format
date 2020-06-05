@@ -1,0 +1,17 @@
+﻿{
+"Keywords": "Keyword.foreground",
+"Numerics": "Number.foreground",
+"Strings": "String.foreground",
+"Dates": "Built-in constant.foreground",
+"Identifiers": "foreground",
+"Operators": "Tag name.foreground",
+"Comments": "Comment.foreground",
+"Preprocessor": "User-defined constant.foreground",
+"Others": "Variable.foreground",
+"Background": "background",
+"CurrentToken": "lineHighlight",
+"CurrentSelection": "selection",
+"PairLexeme": "invisibles",
+"SearchResult": "selection",
+"AutoAssistBackground": "background"
+}

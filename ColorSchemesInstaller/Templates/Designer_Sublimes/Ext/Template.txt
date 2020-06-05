@@ -1,0 +1,17 @@
+﻿{
+"Keywords": "Keywords.foreground",
+"Numerics": "Integers.foreground",
+"Strings": "Strings, Inherited Class.foreground",
+"Dates": "Constants.foreground",
+"Identifiers": "foreground",
+"Operators": "Operators.foreground",
+"Comments": "Comments.foreground",
+"Preprocessor": "Headings.foreground",
+"Others": "Variables.foreground",
+"Background": "background",
+"CurrentToken": "lineHighlight",
+"CurrentSelection": "selection",
+"PairLexeme": "invisibles",
+"SearchResult": "selection",
+"AutoAssistBackground": "background"
+}
