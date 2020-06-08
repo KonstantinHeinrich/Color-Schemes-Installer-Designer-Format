@@ -219,7 +219,7 @@ procedure ColorOnChange(Item)
 		ThisObject[Item.Name] = FormattedDocument.Items[0].Items[0].BackColor;
 	elsif CurrentColor.Type <> ColorType.Absolute then
 		ThisObject[Item.Name] = LastColor;
-		Message("К сожалению, выбор цветов из стиля не поддерживается. Выберите web-цвет или задайте RGB вручную");
+		MessageToUser("К сожалению, выбор цветов из стиля не поддерживается. Выберите web-цвет или задайте RGB вручную", Item.Name);
 	endif;
 	
 	if StrStartsWith(Item.Name, "Des") then
@@ -553,7 +553,7 @@ procedure WriteToEDTSyntaxPrefsFile(Text, FileName) export
 	TextWriter = new TextWriter(FileName);
 	TextWriter.Write(NewText);
 	TextWriter.Close();
-	Message("Настройки записаны в файл " + FileName);
+	MessageToUser("Настройки записаны в файл " + FileName);
 
 endprocedure
 
@@ -597,7 +597,7 @@ procedure WriteToEDTEditorPrefsFile(Text, FileName) export
 	TextWriter = new TextWriter(FileName);
 	TextWriter.Write(NewText);
 	TextWriter.Close();
-	Message("Настройки записаны в файл " + FileName);
+	MessageToUser("Настройки записаны в файл " + FileName);
 
 endprocedure
 
@@ -927,7 +927,7 @@ procedure LoadSublimeScheme()
 	HTTPResponse = HTTPConnection.Get(HTTPRequest);
 	
 	if HTTPResponse.StatusCode = 404 then
-		Message("Цветовая схема по указанному адресу не найдена");
+		MessageToUser("Цветовая схема по указанному адресу не найдена", "tmThemeGallery");
 		return;
 	endif;
 	
@@ -949,7 +949,7 @@ procedure ReadIDEAFile(ColorSchemeFilePath)
 			endif;	
 		enddo;
 		if Item = undefined then
-			Message("Это не архив цветовой схемы нужного формата");
+			MessageToUser("Это не архив цветовой схемы нужного формата", "LocalSchemes");
 			return;
 		endif;
 		TempDir = GetTempFileName();
@@ -1121,6 +1121,21 @@ procedure SetPresentationToListValue(List, Value, Presentation)
 		CurrentItem.Presentation = Presentation;
 	endif;
 
+endprocedure
+
+// Выводит сообщение пользователю
+// 
+// Parameters:
+// 	Text - String - Выводимый текст
+// 	Field - String - Имя реквизита, к которому относится сообщение
+&AtClientAtServerNoContext
+procedure MessageToUser(Text, Field = "")
+	
+	UserMessage = new UserMessage;
+	UserMessage.Field = Field;
+	UserMessage.Text = Text;
+	UserMessage.Message();
+	
 endprocedure
 
 #Region Converting
