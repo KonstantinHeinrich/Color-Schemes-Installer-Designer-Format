@@ -727,6 +727,7 @@
 																	<ExtendedTooltip name="EDT_BuiltinfunctionExtendedTooltip" id="182"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_BSL_Pragmas" id="183">
@@ -737,6 +738,7 @@
 																	<ExtendedTooltip name="EDT_BSL_PragmasExtendedTooltip" id="185"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_BSL_Keywords" id="186">
@@ -747,6 +749,7 @@
 																	<ExtendedTooltip name="EDT_BSL_KeywordsExtendedTooltip" id="188"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Comment" id="189">
@@ -757,6 +760,7 @@
 																	<ExtendedTooltip name="EDT_CommentExtendedTooltip" id="191"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Label" id="192">
@@ -767,6 +771,7 @@
 																	<ExtendedTooltip name="EDT_LabelExtendedTooltip" id="194"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Operators" id="195">
@@ -777,6 +782,7 @@
 																	<ExtendedTooltip name="EDT_OperatorsExtendedTooltip" id="197"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Others" id="198">
@@ -787,6 +793,7 @@
 																	<ExtendedTooltip name="EDT_OthersExtendedTooltip" id="200"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Preprocessor" id="201">
@@ -797,6 +804,7 @@
 																	<ExtendedTooltip name="EDT_PreprocessorExtendedTooltip" id="203"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Brackets" id="204">
@@ -807,6 +815,7 @@
 																	<ExtendedTooltip name="EDT_BracketsExtendedTooltip" id="206"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Strings" id="207">
@@ -817,6 +826,7 @@
 																	<ExtendedTooltip name="EDT_StringsExtendedTooltip" id="209"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Numbers" id="210">
@@ -827,6 +837,7 @@
 																	<ExtendedTooltip name="EDT_NumbersExtendedTooltip" id="212"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 															</ChildItems>
@@ -848,6 +859,7 @@
 																	<ExtendedTooltip name="EDT_occurrenceIndicationColorExtendedTooltip" id="242"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_currentIPColor" id="256">
@@ -858,6 +870,7 @@
 																	<ExtendedTooltip name="EDT_currentIPColorExtendedTooltip" id="258"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_lineNumberColor" id="213">
@@ -868,6 +881,7 @@
 																	<ExtendedTooltip name="EDT_lineNumberColorExtendedTooltip" id="215"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_currentLineColor" id="216">
@@ -878,6 +892,7 @@
 																	<ExtendedTooltip name="EDT_currentLineColorExtendedTooltip" id="218"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_printMarginColor" id="219">
@@ -888,6 +903,7 @@
 																	<ExtendedTooltip name="EDT_printMarginColorExtendedTooltip" id="221"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_FindScope" id="222">
@@ -898,6 +914,7 @@
 																	<ExtendedTooltip name="EDT_FindScopeExtendedTooltip" id="224"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_SelectionForeground" id="225">
@@ -908,6 +925,7 @@
 																	<ExtendedTooltip name="EDT_SelectionForegroundExtendedTooltip" id="227"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_SelectionBackground" id="228">
@@ -918,6 +936,7 @@
 																	<ExtendedTooltip name="EDT_SelectionBackgroundExtendedTooltip" id="230"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Background" id="231">
@@ -928,6 +947,7 @@
 																	<ExtendedTooltip name="EDT_BackgroundExtendedTooltip" id="233"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Foreground" id="234">
@@ -938,6 +958,7 @@
 																	<ExtendedTooltip name="EDT_ForegroundExtendedTooltip" id="236"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_hyperlinkColor" id="237">
@@ -948,6 +969,7 @@
 																	<ExtendedTooltip name="EDT_hyperlinkColorExtendedTooltip" id="239"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
+																		<Event name="StartChoice">ColorStartChoice</Event>
 																	</Events>
 																</InputField>
 															</ChildItems>
