@@ -23,6 +23,7 @@
 					<v8:content>Group sources</v8:content>
 				</v8:item>
 			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
 			<ExtendedTooltip name="GroupSourcesExtendedTooltip" id="89"/>
 			<Events>
 				<Event name="OnCurrentPageChange">GroupSourcesOnCurrentPageChange</Event>
@@ -134,6 +135,7 @@
 									<v8:content>Group IDEAButtons</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="GroupIDEAButtonsExtendedTooltip" id="141"/>
@@ -269,6 +271,7 @@
 									<v8:content>Group sublime buttons</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="GroupSublimeButtonsExtendedTooltip" id="135"/>
@@ -835,7 +838,6 @@
 																	<v8:content>Редактор</v8:content>
 																</v8:item>
 															</Title>
-															<Group>HorizontalIfPossible</Group>
 															<ExtendedTooltip name="GroupEDT_EditorExtendedTooltip" id="179"/>
 															<ChildItems>
 																<InputField name="EDT_occurrenceIndicationColor" id="240">

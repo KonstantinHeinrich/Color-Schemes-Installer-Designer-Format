@@ -222,7 +222,7 @@ procedure ColorOnChange(Item)
 		MessageToUser("К сожалению, выбор цветов из стиля не поддерживается. Выберите web-цвет или задайте RGB вручную", Item.Name);
 	endif;
 	
-	if StrStartsWith(Item.Name, "Des") then
+	if StringStartsWith(Item.Name, "Des") then
 		RefreshHTML("Des");
 	else
 		RefreshHTML("EDT");
@@ -362,7 +362,7 @@ procedure AfterGettingUserDataWorkDir(UserDataWorkDir, AdditionalParameters) exp
 	AppDataDir = "";
 	for each Dir in StrSplit(UserDataWorkDir, "\") do
 		AppDataDir = AppDataDir + Dir + "\";
-		if StrStartsWith(Lower(Dir), "1cv8") then
+		if StringStartsWith(Lower(Dir), "1cv8") then
 			break;
 		endif;
 	enddo;
@@ -535,7 +535,7 @@ procedure WriteToEDTSyntaxPrefsFile(Text, FileName) export
 	enddo;
 
 	for each Color in EDT_ColorsTable do
-		if not StrStartsWith(Color.FullName1C, "tokenStyles") then
+		if not StringStartsWith(Color.FullName1C, "tokenStyles") then
 			continue;
 		endif;
 		FullName1C = StrReplace(Color.FullName1C, "Builtinfunction", "Builtin\ function");
@@ -578,7 +578,7 @@ procedure WriteToEDTEditorPrefsFile(Text, FileName) export
 	SystemDefaults.Add("hyperlinkColor");
 
 	for each Color in EDT_ColorsTable do
-		if StrStartsWith(Color.FullName1C, "tokenStyles") then
+		if StringStartsWith(Color.FullName1C, "tokenStyles") then
 			continue;
 		endif;
 		RGB = ThisObject["EDT_" + Color.Name1C];
@@ -666,7 +666,7 @@ procedure ParseSublimeText(val Text, FileName = "") export
 	ThisIsComment = false;
 	for LineNumber = 1 to StrLineCount(Text) do
 		CurrentLine = StrGetLine(Text, LineNumber);
-		if StrStartsWith(CurrentLine, "<!--") then
+		if StringStartsWith(CurrentLine, "<!--") then
 			ThisIsComment = true;
 		endif;
 		if not ThisIsComment then
@@ -839,7 +839,7 @@ procedure FillThemeGalleryByAPI()
 	HTTPResponse = HTTPConnection.Get(HTTPRequest);
 	
 	for each Theme in FromJSON(HTTPResponse.GetBodyAsString()) do
-		if not StrStartsWith(Theme.name, "Base16") then
+		if not StringStartsWith(Theme.name, "Base16") then
 			FillPropertyValues(tmThemeGallery.Add(), Theme);
 		endif;
 	enddo;
@@ -1137,6 +1137,21 @@ procedure MessageToUser(Text, Field = "")
 	UserMessage.Message();
 	
 endprocedure
+
+// Проверяет, начинается ли строка с указанной подстроки
+// 
+// Parameters:
+// 	SourceString - String - Основная строка
+// 	Substring - String - Проверяемая подстрока
+// Returns:
+// 	Boolean - Истина, если строка начинается с указанной подстроки
+&AtClient
+function StringStartsWith(SourceString, Substring)
+	
+    StrLen = StrLen(SourceString);
+    return Left(SourceString, StrLen) = Substring;
+	
+endfunction
 
 #Region Converting
 
