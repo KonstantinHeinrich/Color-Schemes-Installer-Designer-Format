@@ -231,6 +231,18 @@ procedure ColorOnChange(Item)
 endprocedure
 
 &AtClient
+Procedure ColorTuning(Item, Direction, StandardProcessing)
+	
+	Color = ThisObject[Item.Name];
+	if Direction > 0 and Color.R <= 250 and Color.G <= 250 and Color.B <= 250
+		or Direction < 0 and Color.R >= 5 and Color.G >= 5 and Color.B >= 5 then
+		ThisObject[Item.Name] = new Color(Color.R + Direction * 5, Color.G + Direction * 5, Color.B + Direction * 5);
+		ColorOnChange(Item);
+	endif;
+	
+EndProcedure
+
+&AtClient
 Procedure EDT_WorkspacePathStartChoice(Item, ChoiceData, StandardProcessing)
 	
 	StandardProcessing = false;
@@ -1148,7 +1160,7 @@ endprocedure
 &AtClient
 function StringStartsWith(SourceString, Substring)
 	
-    StrLen = StrLen(SourceString);
+    StrLen = StrLen(Substring);
     return Left(SourceString, StrLen) = Substring;
 	
 endfunction

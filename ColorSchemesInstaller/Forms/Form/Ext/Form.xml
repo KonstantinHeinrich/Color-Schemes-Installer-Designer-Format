@@ -470,165 +470,195 @@
 													<DataPath>Des_Keywords</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_KeywordsContextMenu" id="19"/>
 													<ExtendedTooltip name="Des_KeywordsExtendedTooltip" id="20"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Numerics" id="21">
 													<DataPath>Des_Numerics</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_NumericsContextMenu" id="22"/>
 													<ExtendedTooltip name="Des_NumericsExtendedTooltip" id="23"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Strings" id="24">
 													<DataPath>Des_Strings</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_StringsContextMenu" id="25"/>
 													<ExtendedTooltip name="Des_StringsExtendedTooltip" id="26"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Dates" id="27">
 													<DataPath>Des_Dates</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_DatesContextMenu" id="28"/>
 													<ExtendedTooltip name="Des_DatesExtendedTooltip" id="29"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Identifiers" id="30">
 													<DataPath>Des_Identifiers</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_IdentifiersContextMenu" id="31"/>
 													<ExtendedTooltip name="Des_IdentifiersExtendedTooltip" id="32"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Operators" id="33">
 													<DataPath>Des_Operators</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_OperatorsContextMenu" id="34"/>
 													<ExtendedTooltip name="Des_OperatorsExtendedTooltip" id="35"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Comments" id="36">
 													<DataPath>Des_Comments</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_CommentsContextMenu" id="37"/>
 													<ExtendedTooltip name="Des_CommentsExtendedTooltip" id="38"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Preprocessor" id="39">
 													<DataPath>Des_Preprocessor</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_PreprocessorContextMenu" id="40"/>
 													<ExtendedTooltip name="Des_PreprocessorExtendedTooltip" id="41"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_CurrentToken" id="42">
 													<DataPath>Des_CurrentToken</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_CurrentTokenContextMenu" id="43"/>
 													<ExtendedTooltip name="Des_CurrentTokenExtendedTooltip" id="44"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_CurrentSelection" id="45">
 													<DataPath>Des_CurrentSelection</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_CurrentSelectionContextMenu" id="46"/>
 													<ExtendedTooltip name="Des_CurrentSelectionExtendedTooltip" id="47"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_PairLexeme" id="48">
 													<DataPath>Des_PairLexeme</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_PairLexemeContextMenu" id="49"/>
 													<ExtendedTooltip name="Des_PairLexemeExtendedTooltip" id="50"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Others" id="51">
 													<DataPath>Des_Others</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_OthersContextMenu" id="52"/>
 													<ExtendedTooltip name="Des_OthersExtendedTooltip" id="53"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_Background" id="60">
 													<DataPath>Des_Background</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_BackgroundContextMenu" id="61"/>
 													<ExtendedTooltip name="Des_BackgroundExtendedTooltip" id="62"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_SearchResult" id="54">
 													<DataPath>Des_SearchResult</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_SearchResultContextMenu" id="55"/>
 													<ExtendedTooltip name="Des_SearchResultExtendedTooltip" id="56"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<InputField name="Des_AutoAssistBackground" id="57">
 													<DataPath>Des_AutoAssistBackground</DataPath>
 													<Width>10</Width>
 													<HorizontalStretch>false</HorizontalStretch>
+													<SpinButton>true</SpinButton>
 													<ContextMenu name="Des_AutoAssistBackgroundContextMenu" id="58"/>
 													<ExtendedTooltip name="Des_AutoAssistBackgroundExtendedTooltip" id="59"/>
 													<Events>
 														<Event name="OnChange">ColorOnChange</Event>
 														<Event name="StartChoice">ColorStartChoice</Event>
+														<Event name="Tuning">ColorTuning</Event>
 													</Events>
 												</InputField>
 												<Button name="InvertDesigner" id="161">
@@ -723,121 +753,143 @@
 																	<DataPath>EDT_Builtinfunction</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_BuiltinfunctionContextMenu" id="181"/>
 																	<ExtendedTooltip name="EDT_BuiltinfunctionExtendedTooltip" id="182"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_BSL_Pragmas" id="183">
 																	<DataPath>EDT_BSL_Pragmas</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_BSL_PragmasContextMenu" id="184"/>
 																	<ExtendedTooltip name="EDT_BSL_PragmasExtendedTooltip" id="185"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_BSL_Keywords" id="186">
 																	<DataPath>EDT_BSL_Keywords</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_BSL_KeywordsContextMenu" id="187"/>
 																	<ExtendedTooltip name="EDT_BSL_KeywordsExtendedTooltip" id="188"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Comment" id="189">
 																	<DataPath>EDT_Comment</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_CommentContextMenu" id="190"/>
 																	<ExtendedTooltip name="EDT_CommentExtendedTooltip" id="191"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Label" id="192">
 																	<DataPath>EDT_Label</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_LabelContextMenu" id="193"/>
 																	<ExtendedTooltip name="EDT_LabelExtendedTooltip" id="194"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Operators" id="195">
 																	<DataPath>EDT_Operators</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_OperatorsContextMenu" id="196"/>
 																	<ExtendedTooltip name="EDT_OperatorsExtendedTooltip" id="197"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Others" id="198">
 																	<DataPath>EDT_Others</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_OthersContextMenu" id="199"/>
 																	<ExtendedTooltip name="EDT_OthersExtendedTooltip" id="200"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Preprocessor" id="201">
 																	<DataPath>EDT_Preprocessor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_PreprocessorContextMenu" id="202"/>
 																	<ExtendedTooltip name="EDT_PreprocessorExtendedTooltip" id="203"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Brackets" id="204">
 																	<DataPath>EDT_Brackets</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_BracketsContextMenu" id="205"/>
 																	<ExtendedTooltip name="EDT_BracketsExtendedTooltip" id="206"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Strings" id="207">
 																	<DataPath>EDT_Strings</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_StringsContextMenu" id="208"/>
 																	<ExtendedTooltip name="EDT_StringsExtendedTooltip" id="209"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Numbers" id="210">
 																	<DataPath>EDT_Numbers</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_NumbersContextMenu" id="211"/>
 																	<ExtendedTooltip name="EDT_NumbersExtendedTooltip" id="212"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 															</ChildItems>
@@ -855,121 +907,143 @@
 																	<DataPath>EDT_occurrenceIndicationColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_occurrenceIndicationColorContextMenu" id="241"/>
 																	<ExtendedTooltip name="EDT_occurrenceIndicationColorExtendedTooltip" id="242"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_currentIPColor" id="256">
 																	<DataPath>EDT_currentIPColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_currentIPColorContextMenu" id="257"/>
 																	<ExtendedTooltip name="EDT_currentIPColorExtendedTooltip" id="258"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_lineNumberColor" id="213">
 																	<DataPath>EDT_lineNumberColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_lineNumberColorContextMenu" id="214"/>
 																	<ExtendedTooltip name="EDT_lineNumberColorExtendedTooltip" id="215"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_currentLineColor" id="216">
 																	<DataPath>EDT_currentLineColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_currentLineColorContextMenu" id="217"/>
 																	<ExtendedTooltip name="EDT_currentLineColorExtendedTooltip" id="218"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_printMarginColor" id="219">
 																	<DataPath>EDT_printMarginColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_printMarginColorContextMenu" id="220"/>
 																	<ExtendedTooltip name="EDT_printMarginColorExtendedTooltip" id="221"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_FindScope" id="222">
 																	<DataPath>EDT_FindScope</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_FindScopeContextMenu" id="223"/>
 																	<ExtendedTooltip name="EDT_FindScopeExtendedTooltip" id="224"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_SelectionForeground" id="225">
 																	<DataPath>EDT_SelectionForeground</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_SelectionForegroundContextMenu" id="226"/>
 																	<ExtendedTooltip name="EDT_SelectionForegroundExtendedTooltip" id="227"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_SelectionBackground" id="228">
 																	<DataPath>EDT_SelectionBackground</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_SelectionBackgroundContextMenu" id="229"/>
 																	<ExtendedTooltip name="EDT_SelectionBackgroundExtendedTooltip" id="230"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Background" id="231">
 																	<DataPath>EDT_Background</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_BackgroundContextMenu" id="232"/>
 																	<ExtendedTooltip name="EDT_BackgroundExtendedTooltip" id="233"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_Foreground" id="234">
 																	<DataPath>EDT_Foreground</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_ForegroundContextMenu" id="235"/>
 																	<ExtendedTooltip name="EDT_ForegroundExtendedTooltip" id="236"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 																<InputField name="EDT_hyperlinkColor" id="237">
 																	<DataPath>EDT_hyperlinkColor</DataPath>
 																	<Width>10</Width>
 																	<HorizontalStretch>false</HorizontalStretch>
+																	<SpinButton>true</SpinButton>
 																	<ContextMenu name="EDT_hyperlinkColorContextMenu" id="238"/>
 																	<ExtendedTooltip name="EDT_hyperlinkColorExtendedTooltip" id="239"/>
 																	<Events>
 																		<Event name="OnChange">ColorOnChange</Event>
 																		<Event name="StartChoice">ColorStartChoice</Event>
+																		<Event name="Tuning">ColorTuning</Event>
 																	</Events>
 																</InputField>
 															</ChildItems>
