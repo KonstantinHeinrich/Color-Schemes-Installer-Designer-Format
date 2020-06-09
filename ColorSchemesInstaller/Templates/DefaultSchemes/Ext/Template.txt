@@ -1,0 +1,307 @@
+﻿{
+
+"DesignerColors": [
+
+{
+
+"Name": "Keywords",
+
+"Color": "#FF0000"
+
+},
+
+{
+
+"Name": "Numerics",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Strings",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Dates",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Identifiers",
+
+"Color": "#0000FF"
+
+},
+
+{
+
+"Name": "Operators",
+
+"Color": "#FF0000"
+
+},
+
+{
+
+"Name": "Comments",
+
+"Color": "#008000"
+
+},
+
+{
+
+"Name": "Preprocessor",
+
+"Color": "#963200"
+
+},
+
+{
+
+"Name": "Others",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Background",
+
+"Color": "#FFFFFF"
+
+},
+
+{
+
+"Name": "CurrentToken",
+
+"Color": "#FAFAFA"
+
+},
+
+{
+
+"Name": "CurrentSelection",
+
+"Color": "#F5F5F5"
+
+},
+
+{
+
+"Name": "PairLexeme",
+
+"Color": "#E6E6E6"
+
+},
+
+{
+
+"Name": "SearchResult",
+
+"Color": "#F3EECD"
+
+},
+
+{
+
+"Name": "AutoAssistBackground",
+
+"Color": "#FFFAD9"
+
+}
+
+],
+
+"EDTColors": [
+
+{
+
+"Name": "Label",
+
+"Color": "#7D7D7D"
+
+},
+
+{
+
+"Name": "Numbers",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "BSL_Keywords",
+
+"Color": "#7F0055"
+
+},
+
+{
+
+"Name": "SelectionBackground",
+
+"Color": "#0A236A"
+
+},
+
+{
+
+"Name": "Strings",
+
+"Color": "#2A00FF"
+
+},
+
+{
+
+"Name": "Operators",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Foreground",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "BSL_Pragmas",
+
+"Color": "#7D7D7D"
+
+},
+
+{
+
+"Name": "Preprocessor",
+
+"Color": "#0000CD"
+
+},
+
+{
+
+"Name": "Comment",
+
+"Color": "#3F7F5F"
+
+},
+
+{
+
+"Name": "Builtinfunction",
+
+"Color": "#7F0055"
+
+},
+
+{
+
+"Name": "Others",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Brackets",
+
+"Color": "#000000"
+
+},
+
+{
+
+"Name": "Background",
+
+"Color": "#FFFFFF"
+
+},
+
+{
+
+"Name": "FindScope",
+
+"Color": "#B9AFB4"
+
+},
+
+{
+
+"Name": "SelectionForeground",
+
+"Color": "#FFFFFF"
+
+},
+
+{
+
+"Name": "lineNumberColor",
+
+"Color": "#787878"
+
+},
+
+{
+
+"Name": "currentLineColor",
+
+"Color": "#E8F2FF"
+
+},
+
+{
+
+"Name": "currentIPColor",
+
+"Color": "#E9E2CF"
+
+},
+
+{
+
+"Name": "occurrenceIndicationColor",
+
+"Color": "#EEE8D5"
+
+},
+
+{
+
+"Name": "printMarginColor",
+
+"Color": "#B0B5B9"
+
+},
+
+{
+
+"Name": "hyperlinkColor",
+
+"Color": "#000080"
+
+}
+
+]
+
+}

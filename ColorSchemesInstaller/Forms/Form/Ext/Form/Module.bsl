@@ -8,15 +8,16 @@ var AppDataDir, ColorThemesMap, LastColor;
 &AtServer
 procedure OnCreateAtServer(Cancel, StandardProcessing)
 	
-	This = FormAttributeToValue("Object");	
-	Des_Template = This.GetTemplate("Designer_HTML").GetText();
-	Designer_IDEA = FromJSON(This.GetTemplate("Designer_IDEA").GetText());
-	Designer_Sublime = FromJSON(This.GetTemplate("Designer_Sublime").GetText());
-	Designer_Sublimes = FromJSON(This.GetTemplate("Designer_Sublimes").GetText());
-	EDT_Template = This.GetTemplate("EDT_HTML").GetText();
-	EDT_IDEA = FromJSON(This.GetTemplate("EDT_IDEA").GetText(), true);
-	EDT_Sublime = FromJSON(This.GetTemplate("EDT_Sublime").GetText(), true);
-	EDT_Sublimes = FromJSON(This.GetTemplate("EDT_Sublimes").GetText(), true);
+	This = FormAttributeToValue("Object");
+	DefaultSchemes		= This.GetTemplate("DefaultSchemes").GetText();
+	Des_Template		= This.GetTemplate("Designer_HTML").GetText();
+	Designer_IDEA		= FromJSON(This.GetTemplate("Designer_IDEA").GetText());
+	Designer_Sublime	= FromJSON(This.GetTemplate("Designer_Sublime").GetText());
+	Designer_Sublimes	= FromJSON(This.GetTemplate("Designer_Sublimes").GetText());
+	EDT_Template		= This.GetTemplate("EDT_HTML").GetText();
+	EDT_IDEA			= FromJSON(This.GetTemplate("EDT_IDEA").GetText(), true);
+	EDT_Sublime			= FromJSON(This.GetTemplate("EDT_Sublime").GetText(), true);
+	EDT_Sublimes		= FromJSON(This.GetTemplate("EDT_Sublimes").GetText(), true);
 	
 	Map = new Map;
 	Map.Insert("Keywords", "Red");
@@ -98,10 +99,8 @@ procedure OnOpen(Cancel)
 	if ValueIsFilled(ColorSchemesDirPath) then
 		FindColorSchemeFilesInLocalDir();
 	endif;
-	if ValueIsFilled(EDT_WorkspacePath) then
-		ReadTextFile(EDT_WorkspacePath + EDT_SyntaxPrefsFilePath, "ParseEDTSyntaxPrefs");
-		ReadTextFile(EDT_WorkspacePath + EDT_EditorPrefsFilePath, "ParseEDTEditorPrefs");
-	endif;
+	LocalSchemes.Add().Name = "<Current>";
+	LocalSchemes.Add().Name = "<Default>";
 	BeginGettingUserDataWorkDir(new NotifyDescription("AfterGettingUserDataWorkDir", ThisObject));
 	                
 endprocedure
@@ -378,8 +377,6 @@ procedure AfterGettingUserDataWorkDir(UserDataWorkDir, AdditionalParameters) exp
 			break;
 		endif;
 	enddo;
-	
-	ReadTextFile(AppDataDir + "1cv8.pfl", "ParseDesignerPflFile");
 	
 endprocedure
 
@@ -861,17 +858,25 @@ endprocedure
 &AtClient
 procedure LoadLocalScheme()
 	
-	if Title = "" then
-		Title = "<Default>";
-		return;
-	endif;
-	
 	CurrentData = Items.LocalSchemes.CurrentData;
 	if CurrentData = undefined then
 		return;
 	endif;
-		
 	Title = CurrentData.Name;
+	
+	if Title = "<Current>" then
+		ReadTextFile(AppDataDir + "1cv8.pfl", "ParseDesignerPflFile");
+		if ValueIsFilled(EDT_WorkspacePath) then
+			ReadTextFile(EDT_WorkspacePath + EDT_SyntaxPrefsFilePath, "ParseEDTSyntaxPrefs");
+			ReadTextFile(EDT_WorkspacePath + EDT_EditorPrefsFilePath, "ParseEDTEditorPrefs");
+		endif;
+		return;
+	endif;
+	
+	if Title = "<Default>" then
+		ParseCSIFile(DefaultSchemes, "");
+		return;
+	endif;
 	
 	ColorSchemeFilePath = Lower(CurrentData.FullName);
 	if StrEndsWith(ColorSchemeFilePath, "tmtheme") then
