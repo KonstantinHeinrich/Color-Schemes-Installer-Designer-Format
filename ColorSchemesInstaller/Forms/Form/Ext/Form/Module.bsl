@@ -316,7 +316,10 @@ procedure SaveToFile(Command)
 	Dialog.Directory = ColorSchemesDirPath;
 	Dialog.Filter = "Файлы настроек CSI|*.csi";
 	Dialog.Title = "Введите файл для сохранения настроек";
-	Dialog.FullFileName = ColorSchemesDirPath + "\" + Title + ".csi";
+	Dialog.FullFileName = ColorSchemesDirPath + "\" + Title;
+	if not StrEndsWith(Title, ".csi") then
+		Dialog.FullFileName = Dialog.FullFileName + ".csi";
+	endif;
 	Dialog.Show(new NotifyDescription("WriteSettingsToFile", ThisObject));
 	
 endprocedure
