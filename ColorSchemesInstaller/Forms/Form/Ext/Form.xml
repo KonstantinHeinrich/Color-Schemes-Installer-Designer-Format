@@ -3,7 +3,14 @@
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
 	<Group>AlwaysHorizontal</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
-		<Autofill>false</Autofill>
+		<HorizontalAlign>Right</HorizontalAlign>
+		<ChildItems>
+			<Button name="FormOpenLinksForm" id="259">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.OpenLinksForm</CommandName>
+				<ExtendedTooltip name="FormOpenLinksFormExtendedTooltip" id="260"/>
+			</Button>
+		</ChildItems>
 	</AutoCommandBar>
 	<Events>
 		<Event name="OnOpen">OnOpen</Event>
@@ -2350,6 +2357,26 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>InstallToEDT</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="OpenLinksForm" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полезные ссылки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Open links form</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GeographicalSchema</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>OpenLinksForm</Action>
 			<Representation>TextPicture</Representation>
 		</Command>
 	</Commands>

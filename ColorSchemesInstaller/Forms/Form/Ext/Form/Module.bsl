@@ -256,6 +256,13 @@ EndProcedure
 #Region CommandsEventHandlers
 
 &AtClient
+procedure OpenLinksForm(Command)
+	
+	OpenForm("ExternalDataProcessor.ColorSchemesInstaller.Form.FormLinks",,,,,, Undefined, FormWindowOpeningMode.LockWholeInterface);
+	
+endprocedure
+
+&AtClient
 Procedure RereadLocalDir(Command)
 	
 	FindColorSchemeFilesInLocalDir();

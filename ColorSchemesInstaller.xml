@@ -25,6 +25,7 @@
 		</Properties>
 		<ChildObjects>
 			<Form>Form</Form>
+			<Form>FormLinks</Form>
 			<Template>DefaultSchemes</Template>
 			<Template>Designer_IDEA</Template>
 			<Template>Designer_HTML</Template>

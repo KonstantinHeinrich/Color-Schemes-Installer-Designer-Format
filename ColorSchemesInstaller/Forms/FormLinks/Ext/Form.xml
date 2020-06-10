@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Полезные ссылки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="FormCommandBar" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="GroupSchemes" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подборки цветовых схем</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group schemes</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="GroupSchemesExtendedTooltip" id="5"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration1" id="1">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>http://color-themes.com/?view=index</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Схемы для IDEA:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration1ContextMenu" id="2"/>
+					<ExtendedTooltip name="Decoration1ExtendedTooltip" id="3"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration2" id="6">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://tmtheme-editor.herokuapp.com</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Схемы для Sublime:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration2ContextMenu" id="7"/>
+					<ExtendedTooltip name="Decoration2ExtendedTooltip" id="8"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration3" id="9">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://plugins.jetbrains.com/contest/intellij-themes/2019</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Победители конкурса тем для IDEA:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration3ContextMenu" id="10"/>
+					<ExtendedTooltip name="Decoration3ExtendedTooltip" id="11"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration4" id="12">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://blog.codota.com/5-best-intellij-themes/</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ТОП-5 тем для IDEA:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration4ContextMenu" id="13"/>
+					<ExtendedTooltip name="Decoration4ExtendedTooltip" id="14"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration5" id="15">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://w3bits.com/sublime-text-themes/</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Еще ТОП тем, теперь для Sublime:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration5ContextMenu" id="16"/>
+					<ExtendedTooltip name="Decoration5ExtendedTooltip" id="17"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupSources" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источники вдохновения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group sources</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="GroupSourcesExtendedTooltip" id="19"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration6" id="20">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://infostart.ru/public/449927/</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Визуальный редактор цветовых схем:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration6ContextMenu" id="21"/>
+					<ExtendedTooltip name="Decoration6ExtendedTooltip" id="22"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration7" id="23">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://infostart.ru/public/450868/</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подсветка синтаксиса 1С в редакторах:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration7ContextMenu" id="24"/>
+					<ExtendedTooltip name="Decoration7ExtendedTooltip" id="25"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration8" id="26">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://infostart.ru/public/122391/</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приятная глазу цветовая схема 1С 8.х:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration8ContextMenu" id="27"/>
+					<ExtendedTooltip name="Decoration8ExtendedTooltip" id="28"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupAbout" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обо мне</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Group about</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<ExtendedTooltip name="GroupAboutExtendedTooltip" id="30"/>
+			<ChildItems>
+				<LabelDecoration name="Decoration9" id="31">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://t.me/Ship1CEnterprise</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Канал в Telegram:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration9ContextMenu" id="32"/>
+					<ExtendedTooltip name="Decoration9ExtendedTooltip" id="33"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration10" id="34">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://www.youtube.com/channel/UCD5jZr7TkuiJZmQMBtlsnaw</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Канал на Youtube:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration10ContextMenu" id="35"/>
+					<ExtendedTooltip name="Decoration10ExtendedTooltip" id="36"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+				<LabelDecoration name="Decoration11" id="37">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>https://github.com/KonstantinHeinrich</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница на GitHub:</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowLeft</ToolTipRepresentation>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="Decoration11ContextMenu" id="38"/>
+					<ExtendedTooltip name="Decoration11ExtendedTooltip" id="39"/>
+					<Events>
+						<Event name="Click">LinkClick</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes/>
+</Form>
