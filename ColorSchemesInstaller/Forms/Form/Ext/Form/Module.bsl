@@ -1,7 +1,7 @@
 ﻿#if not WebClient then
 
 &AtClient
-var AppDataDir, ColorThemesMap, LastColor;
+var AppDataDir, LastColor;
 
 #Region FormEventHandlers
 
@@ -18,6 +18,7 @@ procedure OnCreateAtServer(Cancel, StandardProcessing)
 	EDT_IDEA			= FromJSON(This.GetTemplate("EDT_IDEA").GetText(), true);
 	EDT_Sublime			= FromJSON(This.GetTemplate("EDT_Sublime").GetText(), true);
 	EDT_Sublimes		= FromJSON(This.GetTemplate("EDT_Sublimes").GetText(), true);
+	IDEA_Themes_List	= This.GetTemplate("IDEA_Themes_List").GetText();
 	
 	Map = new Map;
 	Map.Insert("Keywords", "Red");
@@ -93,14 +94,7 @@ endprocedure
 &AtClient
 procedure OnOpen(Cancel)
 	
-	if ColorThemesCount = 0 then
-		ColorThemesCount = 100;
-	endif;
-	if ValueIsFilled(ColorSchemesDirPath) then
-		FindColorSchemeFilesInLocalDir();
-	endif;
-	LocalSchemes.Add().Name = "<Current>";
-	LocalSchemes.Add().Name = "<Default>";
+	FindColorSchemeFilesInLocalDir();
 	BeginGettingUserDataWorkDir(new NotifyDescription("AfterGettingUserDataWorkDir", ThisObject));
 	                
 endprocedure
@@ -123,8 +117,13 @@ procedure GroupSourcesOnCurrentPageChange(Item, CurrentPage)
 		 	LoadSublimeScheme();	
 		endif;
 	elsif CurrentPage = Items.GroupIDEA then
+		if ColorSchemesDirPath = "" then
+			Items.GroupSources.CurrentPage = Items.GroupLocalDir;
+			MessageToUser("Заполните путь к каталогу с цветовыми схемами", "ColorSchemesDirPath");
+			return;
+		endif;
 		if ColorThemes.Count() = 0 then
-			FillColorThemesByAPI();
+			FillColorThemesFromList();
 		else
 			LoadIDEAScheme();
 		endif;
@@ -154,17 +153,9 @@ procedure tmThemeGalleryOnActivateRow(Item)
 endprocedure
 
 &AtClient
-Procedure ColorThemesCountOnChange(Item)
-	
-	ColorThemes.Clear();
-	GroupSourcesOnCurrentPageChange(Items.GroupSources, Items.GroupIDEA);
-	
-EndProcedure
-
-&AtClient
 procedure LinkClick(Item)
 	
-	BeginRunningApplication(new NotifyDescription("LinkClickEnd", ThisObject), Item.Title);
+	GotoURL(Item.Title);
 	
 endprocedure
 
@@ -194,11 +185,11 @@ procedure ColorSchemesDirPathStartChoice(Item, ChoiceData, StandardProcessing)
 endprocedure
 
 &AtClient
-Procedure ColorSchemesDirPathOnChange(Item)
+procedure ColorSchemesDirPathOnChange(Item)
 	
 	FindColorSchemeFilesInLocalDir();
 	
-EndProcedure
+endprocedure
 
 &AtClient
 procedure ColorStartChoice(Item, ChoiceData, StandardProcessing)
@@ -230,7 +221,7 @@ procedure ColorOnChange(Item)
 endprocedure
 
 &AtClient
-Procedure ColorTuning(Item, Direction, StandardProcessing)
+procedure ColorTuning(Item, Direction, StandardProcessing)
 	
 	Color = ThisObject[Item.Name];
 	if Direction > 0 and Color.R <= 250 and Color.G <= 250 and Color.B <= 250
@@ -239,17 +230,17 @@ Procedure ColorTuning(Item, Direction, StandardProcessing)
 		ColorOnChange(Item);
 	endif;
 	
-EndProcedure
+endprocedure
 
 &AtClient
-Procedure EDT_WorkspacePathStartChoice(Item, ChoiceData, StandardProcessing)
+procedure EDT_WorkspacePathStartChoice(Item, ChoiceData, StandardProcessing)
 	
 	StandardProcessing = false;
 	Dialog = new FileDialog(FileDialogMode.ChooseDirectory);
 	Dialog.Title = "Выберите каталог рабочей области EDT";
 	Dialog.Show(new NotifyDescription("EDT_WorkspacePathChoice", ThisObject));
 	
-EndProcedure
+endprocedure
 
 #EndRegion
 
@@ -258,16 +249,16 @@ EndProcedure
 &AtClient
 procedure OpenLinksForm(Command)
 	
-	OpenForm("ExternalDataProcessor.ColorSchemesInstaller.Form.FormLinks",,,,,, Undefined, FormWindowOpeningMode.LockWholeInterface);
+	OpenForm("ExternalDataProcessor.ColorSchemesInstaller.Form.FormLinks",,,,,, undefined, FormWindowOpeningMode.LockWholeInterface);
 	
 endprocedure
 
 &AtClient
-Procedure RereadLocalDir(Command)
+procedure RereadLocalDir(Command)
 	
 	FindColorSchemeFilesInLocalDir();
 	
-EndProcedure
+endprocedure
 
 &AtClient
 procedure ColorThemesSortByTitle(Command)
@@ -319,10 +310,15 @@ endprocedure
 &AtClient
 procedure SaveToFile(Command)
 	
+	if ColorSchemesDirPath = "" then
+		MessageToUser("Заполните путь к каталогу с цветовыми схемами", "ColorSchemesDirPath");
+		return;
+	endif;
+	
 	Dialog = new FileDialog(FileDialogMode.Save);
 	Dialog.Directory = ColorSchemesDirPath;
 	Dialog.Filter = "Файлы настроек CSI|*.csi";
-	Dialog.Title = "Введите файл для сохранения настроек";
+	Dialog.Title = "Введите имя файла для сохранения настроек";
 	Dialog.FullFileName = ColorSchemesDirPath + "\" + Title;
 	if not StrEndsWith(Title, ".csi") then
 		Dialog.FullFileName = Dialog.FullFileName + ".csi";
@@ -364,13 +360,13 @@ endprocedure
 &AtClient
 procedure AfterCheckingFileExistence(Exist, Parameters) export
 	
-	if not Exist then
-		return;
+	if Exist then
+		TextReader = new TextReader(Parameters.FileName);
+		Text = TextReader.Read();                                               
+		TextReader.Close();
+	else
+		Text = "";
 	endif;
-
-	TextReader = new TextReader(Parameters.FileName);
-	Text = TextReader.Read();                                               
-	TextReader.Close();
 
 	NotifyDescription = new NotifyDescription(Parameters.AfterReadingProcedure, ThisObject, Parameters.FileName);
 	ExecuteNotifyProcessing(NotifyDescription, Text);
@@ -414,6 +410,9 @@ endprocedure
 &AtClient
 procedure FillLocalSchemes(FilesFound, AdditionalParameters) export
 	
+	LocalSchemes.Add().Name = "<Current>";
+	LocalSchemes.Add().Name = "<Default>";
+	
 	Extensions = new Array;
 	Extensions.Add(".csi");
 	Extensions.Add(".jar");
@@ -423,23 +422,17 @@ procedure FillLocalSchemes(FilesFound, AdditionalParameters) export
 	
 	for each ColorFile in FilesFound do		
 		if Extensions.Find(Lower(ColorFile.Extension)) = undefined then
-			continue
+			continue;
 		endif;
 		FillPropertyValues(LocalSchemes.Add(), ColorFile);
-	enddo
+	enddo;
 
-endprocedure
-
-//@skip-warning
-&AtClient
-procedure LinkClickEnd(ReturnCode, AdditionalParameters) export
-	
 endprocedure
 
 &AtClient
 procedure WriteSettingsToFile(SelectedFiles, AdditionalParameters) export
 	
-	if (SelectedFiles = Undefined) then
+	if (SelectedFiles = undefined) then
 		return;
 	endif;
 	
@@ -468,7 +461,7 @@ endprocedure
 &AtClient
 procedure InstallToDesignerAfterChoosingFile(SelectedFiles, AdditionalParameters) export
 	
-	if (SelectedFiles <> Undefined) then
+	if (SelectedFiles <> undefined) then
 		ReadTextFile(SelectedFiles[0], "WriteToDesignerFile");
 	endif;
 
@@ -620,6 +613,18 @@ procedure WriteToEDTEditorPrefsFile(Text, FileName) export
 
 endprocedure
 
+&AtClient
+procedure FillColorThemesFromListAfterCheckingDir(Exist, AdditionalParameters) export
+	
+	if not Exist then
+		Zip = new ZipFileReader(IDEA_Themes().OpenStreamForRead());
+		Zip.ExtractAll(IDEAThemesDirPath);
+	endif;
+	
+	FillColorThemesFromListAtServer();
+	
+endprocedure
+
 #Region ParsingSchemes
 
 &AtClient
@@ -658,16 +663,14 @@ procedure ParseCSIFile(Text, FileName) export
 	
 	if Settings.Property("DesignerColors") then
 		for each Color in Settings.DesignerColors do
-			ThisObject["Des_" + Color.Name] = HEXtoRGB(Color.Color);
-			Items["Des_" + Color.Name].TitleTextColor = WebColors.Black;
-		enddo
+			SetColor("Des_" + Color.Name, Color.Color);
+		enddo;
 	endif;
 	
 	if Settings.Property("EDTColors") then
 		for each Color in Settings.EDTColors do
-			ThisObject["EDT_" + Color.Name] = HEXtoRGB(Color.Color);
-			Items["EDT_" + Color.Name].TitleTextColor = WebColors.Black;
-		enddo
+			SetColor("EDT_" + Color.Name, Color.Color);
+		enddo;
 	endif;
 	
 	SetDefaultColors("Des", Des_Identifiers);
@@ -685,6 +688,7 @@ procedure ParseSublimeText(val Text, FileName = "") export
 	ThisIsComment = false;
 	for LineNumber = 1 to StrLineCount(Text) do
 		CurrentLine = StrGetLine(Text, LineNumber);
+		CurrentLine = StrReplace(CurrentLine, "&", "and");
 		if StringStartsWith(CurrentLine, "<!--") then
 			ThisIsComment = true;
 		endif;
@@ -696,15 +700,10 @@ procedure ParseSublimeText(val Text, FileName = "") export
 		endif;
 	enddo;
 	
-	try
-		XMLReader = new XMLReader;
-		XMLReader.SetString(StringXML);
-		ColorScheme = XDTOFactory.ReadXML(XMLReader);
-	except
-		Message(ErrorInfo().Cause.Description);
+	ColorScheme = ReadSchemeXML(StringXML);
+	if ColorScheme = undefined then
 		return;
-	endtry;
-	
+	endif;
 	ClearColors();
 	
 	Dict = ColorScheme.dict;
@@ -726,14 +725,14 @@ procedure ParseSublimeText(val Text, FileName = "") export
 	if XDTOHasProperty(Dict, "dict") then
 		for Ind = 0 to Dict.dict.key.Count() - 1 do
 			SetColorFromSource(ColumnName, Dict.dict.key[Ind], Dict.dict.string[Ind]);
-		enddo
+		enddo;
 	endif;
 	
 	for each Entry in Dict.array.dict do
 		if Entry.key = "settings" then
 			for Ind = 0 to Entry.dict.key.Count() - 1 do
 				SetColorFromSource(ColumnName, Entry.dict.key[Ind], Entry.dict.string[Ind]);
-			enddo
+			enddo;
 		else
 			if not XDTOHasProperty(Entry, "dict")
 				or not XDTOHasProperty(Entry.dict, "key")
@@ -746,7 +745,7 @@ procedure ParseSublimeText(val Text, FileName = "") export
 						ColumnValue = Entry.string[0] + "." + Entry.dict.key[Ind];
 						SetColorFromSource(ColumnName, ColumnValue, Entry.dict.string[Ind]);
 					endif;
-				enddo
+				enddo;
 			else
 				SetColorFromSource(ColumnName, Entry.string[0] + "." + Entry.dict.key, Entry.dict.string);
 			endif;
@@ -815,39 +814,56 @@ procedure FindColorSchemeFilesInLocalDir()
 endprocedure
 
 &AtClient
-procedure FillColorThemesByAPI()
+procedure FillColorThemesFromList()
 	
-	HTTPConnection1 = new HTTPConnection("color-themes.com");
-	HTTPRequest1 = new HTTPRequest("api/themes?offset=0&count=" + ColorThemesCount + "&search=&order=popular");
-	HTTPRequest1.headers.insert("Content-Type", "application/json");
-	HTTPRequest1.headers.insert("Accept", "*/*");
-	HTTPResponse = HTTPConnection1.Get(HTTPRequest1);
+	IDEAThemesDirPath = ColorSchemesDirPath + "\IDEA_Themes";
+	ThemesDir = new File(IDEAThemesDirPath);
+	ThemesDir.BeginCheckingExistence(New NotifyDescription("FillColorThemesFromListAfterCheckingDir", ThisForm));
 	
-	Result = FromJSON(HTTPResponse.GetBodyAsString(), true);
-	ColorThemesMap = new Map;
-	
-	for each Theme in Result["themes"] do
-		
-		if Theme["styles"] = undefined then
-			continue;
-		endif;
-		
-		newRow = ColorThemes.Add();
-		newRow._id = Theme["_id"];
-		newRow.Title = Theme["title"];
-		newRow.Downloads = Theme["downloads"];
-		
-		TextStyle = Theme["styles"]["TEXT"];
-		if TextStyle <> undefined then
-			Back = HEXtoRGB(TextStyle["backgroundColor"]);
-			newRow.Light = (Back.R + Back.G + Back.B) > 128 * 3;
-		endif;
-		
-		ColorThemesMap.Insert(newRow._id, Theme);
-		
-	enddo;
-
 endprocedure
+
+&AtServer
+procedure FillColorThemesFromListAtServer()
+	
+	for LineNum = 1 to StrLineCount(IDEA_Themes_List) do
+		Fields = StrSplit(StrGetLine(IDEA_Themes_List, LineNum), ",");
+		Back = HEXtoRGB(Fields[2]);
+		NewRow = ColorThemes.Add();
+		NewRow._id = Fields[0];
+		NewRow.Title = Fields[3];
+		NewRow.Downloads = Fields[1];
+		NewRow.FileName = ThemeFileName(Fields[3]);
+		NewRow.Light = (Back.R + Back.G + Back.B) > 128 * 3;
+	enddo;
+	
+	ColorThemes.Sort("Downloads Desc");
+	
+endprocedure
+
+&AtServerNoContext
+function ThemeFileName(Title)
+	
+	SpecSymbols = new Map;
+	SpecSymbols.Insert(" ", "%20");
+	SpecSymbols.Insert("'", "%27");
+	SpecSymbols.Insert("(", "%28");
+	SpecSymbols.Insert(")", "%29");
+	
+	FileName = EncodeString(Title, StringEncodingMethod.URLEncoding);
+	for each Symb in SpecSymbols do
+		FileName = StrReplace(FileName, Symb.Value, Symb.Key);
+	enddo;
+	
+	return FileName + ".xml";
+
+endfunction
+
+&AtServer
+function IDEA_Themes()
+	
+	return FormAttributeToValue("Object").GetTemplate("IDEA_Themes");
+	
+endfunction
 
 &AtClient
 procedure FillThemeGalleryByAPI()
@@ -907,35 +923,9 @@ procedure LoadIDEAScheme()
 		return;
 	endif;
 	
-	ClearColors();	
 	Title = CurrentData.Title;
-	Styles = ColorThemesMap[CurrentData._id]["styles"];
-	
-	for each Color in Des_ColorsTable do
-		NameParts = StrSplit(Color.NameIDEA, ".");
-		ColorName = ?(NameParts.Count() = 2 and NameParts[1] = "BACKGROUND", "backgroundColor", "color");
-		Style = Styles[NameParts[0]];
-		if Style <> undefined then
-			ThisObject["Des_" + Color.Name1C] = HEXtoRGB(Style[ColorName]);
-			Items["Des_" + Color.Name1C].TitleTextColor = WebColors.Black;
-		endif;
-	enddo;
-	
-	for each Color in EDT_ColorsTable do
-		NameParts = StrSplit(Color.NameIDEA, ".");
-		ColorName = ?(NameParts.Count() = 2 and NameParts[1] = "BACKGROUND", "backgroundColor", "color");
-		Style = Styles[NameParts[0]];
-		if Style <> undefined then
-			ThisObject["EDT_" + Color.Name1C] = HEXtoRGB(Style[ColorName]);
-			Items["EDT_" + Color.Name1C].TitleTextColor = WebColors.Black;
-		endif;
-	enddo;
-	
-	SetDefaultColors("Des", Des_Identifiers);
-	SetDefaultColors("EDT", EDT_Foreground);
-	RefreshHTML("Des");
-	RefreshHTML("EDT");
-	
+	ReadIDEAFile(IDEAThemesDirPath + "\" + CurrentData.FileName);
+		
 endprocedure
 
 &AtClient
@@ -987,10 +977,15 @@ procedure ReadIDEAFile(ColorSchemeFilePath)
 		XMLFilePath = ColorSchemeFilePath;                          
 	endif;
 	
-	XMLReader = new XMLReader;
-	XMLReader.OpenFile(XMLFilePath);
-	ColorScheme = XDTOFactory.ReadXML(XMLReader);
-	XMLReader.Close();
+	TextReader = new TextReader(XMLFilePath);
+	StringXML = TextReader.Read();                                               
+	TextReader.Close();
+	StringXML = StrReplace(StringXML, """$$$""", "'$$$'");
+	
+	ColorScheme = ReadSchemeXML(StringXML);
+	if ColorScheme = undefined then
+		return;
+	endif;
 	
 	if TempDir <> "" then
 		BeginDeletingFiles(, TempDir);
@@ -998,28 +993,34 @@ procedure ReadIDEAFile(ColorSchemeFilePath)
 	
 	ClearColors();
 	
-	for each Color in ColorScheme.colors.option do
-		SetColorFromSource("NameIDEA", Color.name, Color.value);
-	enddo;
+	Colors = ColorScheme.colors;
+	if XDTOHasProperty(Colors, "option") and TypeOf(Colors.option) = Type("XDTOList") then
+		for each Color in Colors.option do
+			SetColorFromSource("NameIDEA", Color.name, Color.value);
+		enddo;
+	endif;
 	
-	for each Attribute in ColorScheme.attributes.option do
-		if not XDTOHasProperty(Attribute, "value") then
-			continue;
-		endif;
-		if not XDTOHasProperty(Attribute.value, "option") then
-			continue;
-		endif;
-		Option = Attribute.value.option;
-		if TypeOf(Option) = Type("XDTOList") then
-			for each Field in Option do
-				if XDTOHasProperty(Field, "value") then
-					SetColorFromSource("NameIDEA", Attribute.name + "." + Field.name, Field.value);
-				endif;
-			enddo;
-		else
-			SetColorFromSource("NameIDEA", Attribute.name + "." + Option.name, Option.value);
-		endif;
-	enddo;
+	Attrs = ColorScheme.attributes;
+	if XDTOHasProperty(Attrs, "option") and TypeOf(Attrs.option) = Type("XDTOList") then
+		for each Attribute in Attrs.option do
+			if not XDTOHasProperty(Attribute, "value") then
+				continue;
+			endif;
+			if not XDTOHasProperty(Attribute.value, "option") then
+				continue;
+			endif;
+			Option = Attribute.value.option;
+			if TypeOf(Option) = Type("XDTOList") then
+				for each Field in Option do
+					if XDTOHasProperty(Field, "value") then
+						SetColorFromSource("NameIDEA", Attribute.name + "." + Field.name, Field.value);
+					endif;
+				enddo;
+			else
+				SetColorFromSource("NameIDEA", Attribute.name + "." + Option.name, Option.value);
+			endif;
+		enddo;
+	endif;
 	
 	SetDefaultColors("Des", Des_Identifiers);
 	SetDefaultColors("EDT", EDT_Foreground);
@@ -1027,6 +1028,20 @@ procedure ReadIDEAFile(ColorSchemeFilePath)
 	RefreshHTML("EDT");
 		
 endprocedure
+
+&AtClient
+function ReadSchemeXML(val StringXML)
+	
+	try
+		XMLReader = new XMLReader;
+		XMLReader.SetString(StringXML);
+		return XDTOFactory.ReadXML(XMLReader);
+	except
+		MessageToUser(ErrorInfo().Cause.Description);
+		return undefined;
+	endtry;
+
+endfunction
 
 &AtClient
 procedure ClearColors()
@@ -1056,21 +1071,31 @@ procedure SetColorFromSource(ColumnName, ColumnValue, ColorValue)
 	FoundRows = Des_ColorsTable.FindRows(new Structure(ColumnName, ColumnValue));
 	for each Row in FoundRows do
 		AttrName = "Des_" + Row.Name1C;
-		ThisObject[AttrName] = HEXtoRGB(ColorValue);
-		Items[AttrName].TitleTextColor = WebColors.Black;
+		SetColor(AttrName, ColorValue);
 	enddo;
 	
 	FoundRows = EDT_ColorsTable.FindRows(new Structure(ColumnName, ColumnValue));
 	for each Row in FoundRows do
 		AttrName = "EDT_" + Row.Name1C;
-		ThisObject[AttrName] = HEXtoRGB(ColorValue);
-		Items[AttrName].TitleTextColor = WebColors.Black;
+		SetColor(AttrName, ColorValue);
 	enddo;
 	
 endprocedure
 
 &AtClient
-Procedure SetDefaultColors(val IDE, CommonForeground)
+procedure SetColor(AttrName, ColorValue)
+	
+	Color = HEXtoRGB(ColorValue);
+	if Color = undefined then
+		return;
+	endif;
+	ThisObject[AttrName] = Color;
+	Items[AttrName].TitleTextColor = WebColors.Black;
+
+endprocedure
+
+&AtClient
+procedure SetDefaultColors(val IDE, CommonForeground)
 	
 	IDE = IDE + ?(StrEndsWith(IDE, "_"), "", "_");
 	EmptyColor = new Color;
@@ -1098,7 +1123,7 @@ Procedure SetDefaultColors(val IDE, CommonForeground)
 		endif
 	enddo;
 
-EndProcedure
+endprocedure
 
 &AtClient
 procedure RefreshHTML(val IDE)
@@ -1222,7 +1247,7 @@ endfunction
 // 	RGB - Color - Цвет для преобразования
 // Returns:
 // 	String - Закодированный цвет
-&AtClient
+&AtClientAtServerNoContext
 function RGBtoDEC(val RGB)
 	
 	XDTO = Eval("XDTOSerializer");
@@ -1241,7 +1266,7 @@ endfunction
 // 	Value - String - Десятичное представление цвета
 // Returns:
 // 	Color - Цвет RGB
-&AtClient
+&AtClientAtServerNoContext
 function DECtoRGB(val Value)
 	
 	Value = Number(Value);
@@ -1258,7 +1283,7 @@ endfunction
 // 	RGB - Color - Цвет для преобразования
 // Returns:
 // 	String - 16-ричный цвет
-&AtClient
+&AtClientAtServerNoContext
 function RGBtoHEX(val RGB)
 	
 	XDTO = Eval("XDTOSerializer");
@@ -1272,11 +1297,16 @@ endfunction
 // 	HEX - String - Цвет в 16-ричном виде
 // Returns:
 // 	Color - RGB цвет
-&AtClient
+&AtClientAtServerNoContext
 function HEXtoRGB(val HEX)
 	
 	HEX = TrimAll(HEX);
 	HEX = StrReplace(HEX, "#", "");
+	
+	if StrLen(HEX) > 6 then
+		return undefined;
+	endif;  	
+	
 	HEX = Left("000000", 6 - StrLen(HEX)) + HEX;
 	HEX = Left(HEX, 6);
 	HEX = "#" + HEX;
